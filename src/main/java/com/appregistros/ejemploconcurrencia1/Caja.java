@@ -15,11 +15,11 @@ public class Caja {
 
     }
 
-    public int getCantidadVentas() {
+    public synchronized int getCantidadVentas() {
         return cantidadVentas;
     }
 
-    public int getTotalRecaudado() {
+    public synchronized int getTotalRecaudado() {
         return totalRecaudado;
     }
 

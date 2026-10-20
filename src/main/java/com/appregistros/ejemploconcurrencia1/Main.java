@@ -8,9 +8,9 @@ public class Main {
          * Runnable representa la tarea que ejecutara cada vendedor
          */
 
-        Runnable vendedor1 = () -> procesarVentas(caja, "Vendedor 1", caja);
-        Runnable vendedor2 = () -> procesarVentas(caja, "Vendedor 2", caja);
-        Runnable vendedor3 = () -> procesarVentas(caja, "Vendedor 3", caja);
+        Runnable vendedor1 = () -> procesarVentas("Vendedor 1", caja);
+        Runnable vendedor2 = () -> procesarVentas("Vendedor 2", caja);
+        Runnable vendedor3 = () -> procesarVentas("Vendedor 3", caja);
 
         //crear los tres hilos que ejecutaran la tarea de cada vendedor
         Thread hilo1 = new Thread(vendedor1);
@@ -28,6 +28,37 @@ public class Main {
         hilo2.start();
         //vendedor 3
         hilo3.start();
-    }
 
+        /**
+         * join() hace que el hilo main espere hasta que los demas terminen
+         */
+        try {
+           hilo1.join();
+           hilo2.join();
+           hilo3.join();
+        } catch (InterruptedException e) {
+           Thread.currentThread().interrupt();
+           throw new IllegalStateException("Se interrumpió la espera de los vendedores.", e);
+        }
+
+        System.out.println("---Resultados finales ---");
+        System.out.println("Cantidad de ventas: " + caja.getCantidadVentas());
+        System.out.println("Total recaudado: c$ " + caja.getTotalRecaudado());
+    }
+    private static void procesarVentas (String vendedor, Caja caja){
+        for(int i = 1; i <= 5; i ++){
+            try{
+                /**
+                 * Simular que procesamos una venta que tarda aproximadamente 500 milisegundos
+                 */
+                Thread.sleep(500);
+                caja.registrarVenta(vendedor, 100);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.out.println(vendedor + "fue interrumpido");
+            }
+
+
+        }
+    }
 }
