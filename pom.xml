@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.appregistros.ejemploconcurrencia1/com.appregistros.ejemploconcurrencia1.HelloApplication
+                                com.appregistros.ejemploconcurrencia1/com.appregistros.ejemploconcurrencia1.MainApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.appregistros.ejemploconcurrencia1.controller.VentasController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="Procesamiento Concurrente de Ventas">
+        <style>-fx-font-size: 24px; -fx-font-weight: bold;</style>
+    </Label>
+    <Separator />
+
+    <VBox spacing="4.0">
+        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Vendedor 1" />
+        <ProgressBar fx:id="pbVendedor1" maxWidth="Infinity" progress="0.0" />
+        <Label fx:id="lblVendedor1" style="-fx-text-fill: #666666;" text="Esperando..." />
+    </VBox>
+
+    <VBox spacing="4.0">
+        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Vendedor 2" />
+        <ProgressBar fx:id="pbVendedor2" maxWidth="Infinity" progress="0.0" />
+        <Label fx:id="lblVendedor2" style="-fx-text-fill: #666666;" text="Esperando..." />
+    </VBox>
+
+    <VBox spacing="4.0">
+        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Vendedor 3" />
+        <ProgressBar fx:id="pbVendedor3" maxWidth="Infinity" progress="0.0" />
+        <Label fx:id="lblVendedor3" style="-fx-text-fill: #666666;" text="Esperando..." />
+    </VBox>
+
+    <Separator />
+
+    <HBox alignment="CENTER_LEFT" spacing="20.0">
+        <Label text="Ventas realizadas:" />
+        <Label fx:id="lblVentasRealizadas" style="-fx-font-weight: bold;" text="0" />
+        <Label text="Total recaudado:" />
+        <Label fx:id="lblTotalRecaudado" style="-fx-font-weight: bold;" text="C$0" />
+    </HBox>
+
+    <TextArea fx:id="txtRegistro" editable="false" promptText="Aquí aparecerán las ventas procesadas..." wrapText="true" VBox.vgrow="ALWAYS" />
+
+    <HBox spacing="10.0">
+        <Button fx:id="btnIniciar" onAction="#iniciarVentas" text="Iniciar ventas" />
+        <Button fx:id="btnLimpiar" onAction="#LimpiarRegistro" text="Limpiar" />
+    </HBox>
+</VBox>

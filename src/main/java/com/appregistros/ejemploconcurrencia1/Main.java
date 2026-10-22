@@ -46,7 +46,7 @@ public class Main {
         System.out.println("Total recaudado: c$ " + caja.getTotalRecaudado());
     }
     private static void procesarVentas (String vendedor, Caja caja){
-        for(int i = 1; i <= 5; i ++){
+        for(int i = 1; i <= 200; i ++){
             try{
                 /**
                  * Simular que procesamos una venta que tarda aproximadamente 500 milisegundos
