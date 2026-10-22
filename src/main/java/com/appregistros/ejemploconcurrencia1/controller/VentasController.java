@@ -120,8 +120,8 @@ public class VentasController {
     }
 
     /**
-     * Porque usar Synchronized en el método registrarVenta() de la clase CajaCompartida?
-     * Porque varios hilos (vendedores) pueden acceder a este método al mismo tiempo, lo que podría causar inconsistencias en los datos si no se sincroniza el acceso.
-     * Al usar synchronized, garantizamos que solo un hilo pueda ejecutar este método a la vez, evitando problemas de concurrencia y asegurando que las ventas y el total recaudado se registren correctamente.
+     * Porque usar Synchronized en el metodo registrarVenta() de la clase CajaCompartida?
+     * Porque varios hilos (vendedores) pueden acceder a este metodo al mismo tiempo, lo que podría causar inconsistencias en los datos si no se sincroniza el acceso.
+     * Al usar synchronized, garantizamos que solo un hilo pueda ejecutar este metodo a la vez, evitando problemas de concurrencia y asegurando que las ventas y el total recaudado se registren correctamente.
      */
 }
